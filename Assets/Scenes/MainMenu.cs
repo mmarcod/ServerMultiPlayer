@@ -1,11 +1,11 @@
-/*using Photon.Pun;
+using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject findOpponentPanel = null;
     [SerializeField] private GameObject waitingStatusPanel = null;
@@ -68,7 +68,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Client successfully joined a room");
         int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
-        if (playerCount != MaxPlayerPerRoom)
+        if (playerCount != MaxPlayersPerRoom)
         {
             waitingStatusText.text = "Waiting For Opponent";
             Debug.Log("Client is waiting for an opponent");
@@ -91,4 +91,3 @@ public class MainMenu : MonoBehaviour
         PhotonNetwork.LoadLevel("Scene_Main");
     }
 }
-*/
